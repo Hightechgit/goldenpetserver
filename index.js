@@ -1,4 +1,4 @@
-require("dotenv").config();
+ require("dotenv").config();
 const express = require("express");
 const moongose =  require("mongoose");
 const bodyParser =  require("body-parser");
@@ -8,17 +8,19 @@ const Router = require("./Routes/Index");
 const ServerApp = express();
 
 // This line of code allow us to  connect with mongoDB database  { }
+//hg
+
 
 const DatabaseConnect  =  async()=>{
-    moongose.connect("mongodb+srv://hightech:123HIJP99@cluster0.bkueuua.mongodb.net", 
-    {useNewUrlParser:true});
+    moongose.connect("mongodb+srv://geralhightech:NyGgET8LY31LQVnG@cluster0.5te8dnr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", 
+    {useNewUrlParser:true}); //  NyGgET8LY31LQVnG    NyGgET8LY31LQVnG
     const Database = moongose.connection;
     try {
         Database.on("error", (error)=>{
            console.log("Something  went very wrong 1  - ", error);  
         });
         Database.once("open", ()=>{
-            console.log("Well Done database connected ....");
+            console.log("Well Done database connected kiosso  ....");
         });
     } catch (error) {
         console.log("Something  went very wrong 2  - ", error);  
@@ -49,6 +51,6 @@ ServerApp.use(Router);
 //ServerApp.use();
 
 
-ServerApp.listen(6500, ()=>{
+ServerApp.listen(6000, ()=>{
    console.log("Server is running without  issues ...")
 });
